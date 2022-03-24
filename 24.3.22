@@ -1,0 +1,28 @@
+Relationships = []
+# relationships in order are:
+skills = []
+# skills in order are: animal handling,
+Queen_support = False
+print("You're walking through the gardens in the palace. As an ambassador from Zuvlec, you are afforded certain")
+print("privileges. Snaerjorth (anglicised spelling) has a variety of wildlife not seen at home.")
+print("A dog sprints up to you with a stick. That was one of the things you didn't expect when you travelled.")
+print("Sure, you'd seen them before, but the ones in Snaerjorth were far different. Of course, that's to be")
+print("expected when their main purpose was pulling sleighs, which are utterly redundant in Zuvlec.")
+yes = "a" or "A"
+no = "b" or "B"
+while True:
+      Stick_dog = raw_input("Do you throw the stick for the dog? (a for yes, b for no) ")
+      if Stick_dog == yes:
+            print("you pick up the stick and throw it, watching as the dog chases after it.")
+            skills.append(1)
+            animal_response = "smiling as the dog ignored the stick and sprinted into the lake."
+            break
+      if Stick_dog == no:
+            print("You ignore the dog, preferring to stroll the garden without animals.")
+            skills.append(-1)
+            animal_response = "wrinkling your nose as the dog hounds away, unphased by your lack of attention."
+            break
+print("You wander down the path " + animal_response)
+print("A voice shouts your name, 'Excuse me!'")
+name = raw_input("What is your name? ")
+print("'Excuse me! " + name + "")
