@@ -1,0 +1,58 @@
+Relationships = []
+# relationships in order are:
+skills = []
+# skills in order are: animal handling,
+import sys
+
+Queen_support = False
+# story set up
+print("You're walking through the gardens in the palace. As an ambassador from Zuvlec, you are afforded certain")
+print("privileges. Snaerjorth (anglicised spelling) has a variety of wildlife not seen at home.")
+print("A dog sprints up to you with a stick. That was one of the things you didn't expect when you travelled.")
+print("Sure, you'd seen dogs before, but the ones in Snaerjorth were far different. Of course, that's to be")
+print("expected when their main purpose was pulling sleighs, which are utterly redundant in Zuvlec.")
+yes = "a" or "A"
+no = "b" or "B"
+
+while True:
+      Stick_dog = raw_input("Do you throw the stick for the dog? (a for yes, b for no) ")
+      if Stick_dog == yes:
+            print("you pick up the stick and throw it, watching as the dog chases after it.")
+            skills.append(1)
+            animal_response = "smiling as the dog ignored the stick and sprinted into the lake, causing huge splashes."
+            break
+      if Stick_dog == no:
+            print("You ignore the dog, preferring to stroll the garden without animals.")
+            skills.append(-1)
+            animal_response = "wrinkling your nose as the dog hounds away, unphased by your lack of attention."
+            break
+      if Stick_dog != yes or no:
+            print("Incorrect entry, please try again.")
+print("You wander down the path " + animal_response)
+print("You carry on, wandering down a small, unoccupied path. Flowers bloomed, arching over the path.")
+print("A small temple appears in the trees, green paint entwined perfectly with gold. It looked to be only a few")
+print("rooms, large enough for maybe 50 people tops. A small swing seat sits in the shade.")
+seat = "a" or "A"
+decoration = "b" or "B"
+enter = "c" or "C"
+leave = "d" or "D"
+conversation = "You hear voices from inside the temple. 'How long should it take you?"
+while True:
+      print("a: sit in the swing seat")
+      print("b: look at the temple decorations")
+      print("c: enter the temple")
+      print("d: keep walking")
+      temple = raw_input("What do you do? ")
+      if temple == seat:
+            print("You sit down on the swing, swinging back and forth. The ropes tied to the tree seemed strong enough")
+            print("")
+            break
+      if temple == decoration:
+            print()
+            break
+      if temple == enter:
+            print("You enter the temple. Two people are sitting having a discussion. One of them - you recognise her as")
+            print("Lady Kulsk, notices you. With speed faster than you'd have anticipated from an aristocrat she throws")
+            print("a knife. It lands squarely in your throat.")
+            print("You died. L.")
+            sys.exit()
