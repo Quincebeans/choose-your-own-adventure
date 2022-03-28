@@ -1,0 +1,95 @@
+Relationships = []
+# relationships in order are:
+skills = []
+# skills in order are: animal handling,
+import sys
+
+Queen_support = False
+# story set up
+print("You're walking through the gardens in the palace. As an ambassador from Zuvlec, you are afforded certain")
+print("privileges. Snaerjorth (anglicised spelling) has a variety of wildlife not seen at home.")
+print("A dog sprints up to you with a stick. That was one of the things you didn't expect when you travelled.")
+print("Sure, you'd seen dogs before, but the ones in Snaerjorth were far different. Of course, that's to be")
+print("expected when their main purpose was pulling sleighs, which are utterly redundant in Zuvlec.")
+option_a = "a" or "A"
+option_b = "b" or "B"
+option_c = "c" or "C"
+option_d = "d" or "D"
+while True:
+    Choice1 = raw_input("Do you throw the stick for the dog? (a for yes, b for no) ")
+    if Choice1 == option_a:
+        print("you pick up the stick and throw it, watching as the dog chases after it.")
+        skills.append(1)
+        animal_response = "smiling as the dog ignored the stick and sprinted into the lake, causing huge splashes."
+        break
+    if Choice1 == option_b:
+        print("You ignore the dog, preferring to stroll the garden without animals.")
+        skills.append(-1)
+        animal_response = "wrinkling your nose as the dog hounds away, unphased by your lack of attention."
+        break
+    if Choice1 != option_a or option_b:
+        print("Incorrect entry, please try again.")
+print(" ")
+print("You wander down the path " + animal_response)
+print("You carry on, wandering down a small, unoccupied path. Flowers bloom, arching over the path.")
+print("A small temple appears in the trees, green paint entwining perfectly with gold. It looked to be only a few")
+print("rooms, large enough for maybe 50 people tops. A small swing seat sits in the shade.")
+conversation = "You hear voices from inside the temple. 'How long should it take you?'"
+conversation2 = "'I can have the poisons ready within a week,' a second voice says."
+conversation3 = "'I have an assassin ready with a knife if all else fails.'"
+conversation4 = "I assure you I can murder her without your assassin's assistance. Trust me, the Queen will be dead"
+conversation5 = "within the week.'"
+while True:
+    print("a: sit in the swing seat")
+    print("b: look at the temple decorations")
+    print("c: enter the temple")
+    print("d: keep walking")
+    Choice2 = raw_input("What do you do? ")
+    if Choice2 == option_a:
+        print("You sit down on the swing, swinging back and forth. The ropes tied to the tree seemed strong enough")
+        print(conversation)
+        print(conversation2)
+        print(conversation3)
+        print(conversation4)
+        print(conversation5)
+        break
+    if Choice2 == option_b:
+        print("You look up at the golden green archways, admiring the architecture in silence.")
+        print(conversation)
+        print(conversation2)
+        print(conversation3)
+        print(conversation4)
+        print(conversation5)
+        break
+    if Choice2 == option_c:
+        print("You enter the temple. Two people are sitting having a discussion. One of them - you recognise her as")
+        print("Lady Kulsk - notices you. Faster than you'd have anticipated from an aristocrat she throws")
+        print("a knife. It lands squarely in your throat.")
+        print("You died. F in the chat.")
+        sys.exit()
+    if Choice2 == option_d:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("A week later the queen is dead. You have failed.")
+        sys.exit()
+while True:
+    print("A plot to kill the queen. Of course, not your queen, so you could always let it be. But imagine the")
+    print("possibilities afforded by uncovering a treason plot!")
+    print("a: Walk in and confront the conspirators.")
+    print("b: Ignore them. Not your problem.")
+    print("c: leave quickly so they can't catch you eavesdropping.")
+    Choice3 = raw_input("What do you choose? ")
+    if Choice3 == option_a:
+        print("You enter the temple. The two people are sitting having a discussion. One of them - you recognise her")
+        print("as Lady Kulsk - notices you. Faster than you'd have anticipated from an aristocrat she throws")
+        print("a knife. It lands squarely in your throat.")
+        print("You died. L.")
+        sys.exit()
+    if Choice3 == option_b:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("A week later the queen is dead. You have failed.")
+        sys.exit()
+    if Choice3 == option_c:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("Thoughts race in your mind. What are you supposed to do?")
+        break
+print("")
