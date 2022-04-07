@@ -1,0 +1,305 @@
+import sys
+
+
+queen_support = False
+assassin_aware = False
+appointment = False
+queen_visit = False
+conversation_continue = False
+
+# story set up
+while True:
+    name = raw_input("What is your name?")
+    if name:
+        print("hello" + name)
+        break
+    else:
+        print("Invalid name.")
+option_a = "a" or "A"
+option_b = "b" or "B"
+option_c = "c" or "C"
+option_d = "d" or "D"
+
+
+def pub_meeting():
+    print("The Queen looks at you from her regal position on her throne. Surrounding her are a collection of advisers.")
+    print(name + "Speak.")
+    print("a: State your case. Say that she's going to be murdered.")
+    print("b: request the audience leaves.")
+    print("c: Collapse on the ground, screaming.")
+    choice_pub = raw_input("What do you choose?")
+    if choice_pub == option_a:
+        print("The room descends in chaos, advisers shouting over each other.")
+        if assassin_aware is True:
+            print("The Queen remains calm. The guard must have told her privately, so that no one else could hear.")
+            print("'Indeed. Pray tell how you discovered this.'")
+            print("You tell her how.  The advisers are all shocked, faces clearly betraying how little they know about")
+            print("the public opinion of any monarch. Pretty shit advisers.")
+            print("The Queen coughs. 'No one in this room shall speak of this. If anyone talks then there will be a")
+            print("few replacements made.' She looks at you. 'Dismissed.'")
+        if assassin_aware is False:
+            print("The Queen's eyes go wide. 'Continue.'")
+            print("You tell her how.  The advisers are all shocked, faces clearly betraying how little they know about")
+            print("the public opinion of any monarch. Pretty shit advisers.")
+            print("The Queen coughs. 'No one in this room shall speak of this. If anyone talks then there will be a")
+            print("few replacements made.' She looks at you. 'Dismissed.'")
+    if choice_pub == option_b:
+        if assassin_aware is True:
+            print("The Queen nods, gesturing for the advisers on both sides of the room to leave, however three")
+            print("remained. She turns to you. 'Speak your case.'")
+            print("Figuring that the advisers behind her wouldn't be leaving, you explain. The four of them listen in")
+            print("silence until you finish.")
+            print("'I see.' The Queen is silent for a few moments. 'Dismissed.'")
+            print("You nod and leave, returning to your rooms.")
+            queen_support = True
+        if assassin_aware is False:
+            print("You make your request, however the Queen refuses. 'Anything to be said to me can be said to them.'")
+            print("You tell her and her advisers about the plot to murder the Queen.")
+            print("'Indeed. Pray tell how you discovered this.'")
+            print("You tell her how.  The advisers are all shocked, faces clearly betraying how little they know about")
+            print("the public opinion of any monarch. Pretty shit advisers.")
+            print("The Queen coughs. 'No one in this room shall speak of this. If anyone talks then there will be a")
+            print("few replacements made.' She looks at you. 'Dismissed.'")
+    if choice_pub == option_c:
+        print("you are escorted out of the room. You wake up a few days later. The Queen is dead. You have failed.")
+        print("Damn bro that kind of sucks.")
+        sys.exit()
+
+
+def conversation_solo():
+    print("You smile and she turns to the person on the other side of her. You sit contentedly for a")
+    print("moments until a tall man sits down in the empty seat. He turns to you. 'Hello, I'm Viscount")
+    print("Seldon. I presume you are " + name + "?' You confirm his answer, and he continues. 'I'm the")
+    print("former ambassador for the Crown in Zuvlec.'")
+    print("You smile and nod.")
+
+
+print("You're walking through the gardens in the palace. As an ambassador from Zuvlec, you are afforded certain")
+print("privileges. Snaerjorth (anglicised spelling) has a variety of wildlife not seen at home.")
+print("A dog sprints up to you with a stick. That was one of the things you didn't expect when you travelled.")
+print("Sure, you'd seen dogs before, but the ones in Snaerjorth were far different. Of course, that's to be")
+print("expected when their main purpose was pulling sleighs, which are utterly redundant in Zuvlec.")
+
+
+while True:
+    print("a: throw the stick for the dog")
+    print("b: ignore the dog")
+    Choice1 = raw_input("What do you choose? ")
+    if Choice1 == option_a:
+        print("you pick up the stick and throw it, watching as the dog chases after it.")
+        animal_response = "smiling as the dog ignored the stick and sprinted into the lake, causing huge splashes."
+        break
+    if Choice1 == option_b:
+        print("You ignore the dog, preferring to stroll the garden without animals.")
+        animal_response = "wrinkling your nose as the dog hounds away, unphased by your lack of attention."
+        break
+    if Choice1 != option_a or option_b:
+        print("Incorrect entry, please try again.")
+print(" ")
+print("You wander down the path " + animal_response)
+print("You carry on, wandering down a small, unoccupied path. Flowers bloom, arching over the path.")
+print("A small temple appears in the trees, green paint entwining perfectly with gold. It looked to be only a few")
+print("rooms, large enough for maybe 50 people tops. A small swing seat sits in the shade.")
+
+
+def conversation():
+    print("You hear voices from inside the temple. 'How long should it take you?'")
+    print("'I can have the poisons ready within a week,' a second voice says.")
+    print("'I have an assassin ready with a knife if all else fails.'")
+    print("I assure you I can murder her without your assassin's assistance. Trust me, the Queen will be dead")
+    print("before tomorrow night.'")
+
+
+while True:
+    print("a: sit in the swing seat")
+    print("b: look at the temple decorations")
+    print("c: enter the temple")
+    print("d: keep walking")
+    Choice2 = raw_input("What do you do? ")
+    print(" ")
+    if Choice2 == option_a:
+        print("You sit down on the swing, swinging back and forth. The ropes tied to the tree seemed strong enough")
+        conversation()
+        break
+    if Choice2 == option_b:
+        print("You look up at the golden green archways, admiring the architecture in silence.")
+        conversation()
+        break
+    if Choice2 == option_c:
+        print("You enter the temple. Two people are sitting having a discussion. One of them - you recognise her as")
+        print("Lady Kulsk - notices you. Faster than you'd have anticipated from an aristocrat she throws")
+        print("a knife. It lands squarely in your throat.")
+        print("You died. F in the chat.")
+        sys.exit()
+    if Choice2 == option_d:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("A week later the queen is dead. You have failed.")
+        sys.exit()
+while True:
+    print("A plot to kill the queen. Of course, not your queen, so you could always let it be. But imagine the")
+    print("possibilities afforded by uncovering a treason plot!")
+    print("a: Walk in and confront the conspirators.")
+    print("b: Ignore them. Not your problem.")
+    print("c: leave quickly so they can't catch you eavesdropping.")
+    Choice3 = raw_input("What do you choose? ")
+    print(" ")
+    if Choice3 == option_a:
+        print("You enter the temple. The two people are sitting having a discussion. One of them - you recognise her")
+        print("as Lady Kulsk - notices you. Faster than you'd have anticipated from an aristocrat she throws a")
+        print("knife. It lands squarely in your throat.")
+        print("You died. L.")
+        sys.exit()
+    if Choice3 == option_b:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("The following evening the Queen is dead. You have failed.")
+        sys.exit()
+    if Choice3 == option_c:
+        print("You walk down the path, past the temple and further into the foliage.")
+        print("Thoughts race in your mind. What are you supposed to do?")
+        break
+print(" ")
+print("Thoughts race through your head. A plot to kill the Queen! The knowledge of this would surely benefit whomever")
+print("knows.")
+while True:
+    print("a: Keep it a secret. If people know you're aware of the plot then you might have a target on your back.")
+    print("b: Tell the Queen. After that it's her choice. If you know and don't tell her then you could be considered"
+          " treasonous")
+    print("c: Inform your own monarch, Princen Kor. Then Princen Kor can make the decision - if the messenger arrives "
+          "in time.")
+    Choice4 = raw_input("What do you choose? ")
+    print(" ")
+    if Choice4 == option_a:
+        print("You decide to keep it a secret. If no one knows you knows then you'll be safe. You just have to work")
+        print("out who the conspirators are and inform the Queen once you know.")
+        print("You head back to your rooms, to prepare for the ball this evening, and a night of sleuthing.")
+        break
+    if Choice4 == option_b:
+        print("Telling Queen Alia seems best. If you tell her then she'll have a more favourable view of Zuvlec. Of")
+        print("course, she might not believe you, which would ruin any hopes for an alliance, but you decide to risk "
+              "it.")
+        print("You walk quickly to her audience chamber. A guard steps up. 'Business?'")
+        print("a: Ignore the guard and enter the audience chamber.")
+        print("b: Request a private audience with the Queen. Don't state why you need it.")
+        print("c: Request an audience with the Queen. Tell the guard it's about an assassination plot.")
+        print("d: Lie to the guard; say that it's international affairs.")
+        Choice5 = raw_input("What do you choose? ")
+        print(" ")
+        if Choice5 == option_a:
+            print("'Hey! You can't do that!' The guard is now blocking the door, stopping you from entering.")
+            print(" ")
+            print("a: Try to push past.")
+            print("b: Stop and say it's of urgent importance.")
+            print("c: Cuss the guard out.")
+            print(" ")
+            Choice6 = raw_input("What do you choose? ")
+            if Choice6 == option_a:
+                print("'Entitled prick.' The guard stabs you. You drop to the ground, bleeding.")
+                print("You died. Fs in the chat.")
+                sys.exit()
+            if Choice6 == option_b:
+                print("'Most certainly. I shall inform the queen.' The guard disappears into the audience hall.")
+                print("The guard reappeared moments later. 'She'll see you now.'")
+                pub_meeting()
+                break
+            if Choice6 == option_c:
+                print("'Prick.' The guard stabs you. You drop to the ground, bleeding.")
+                print("You died. Sucks to suck.")
+                sys.exit()
+        if Choice5 == option_b:
+            print("'I'll inform the Queen of your presence. Please wait here.'")
+            print("You wait outside as the guard disappears. The guard appears a few moments later.")
+            print("'She'll see you this evening. Six o'clock, before the ball.'")
+            print("You nod and walk away, returning to your rooms.")
+            appointment = True
+            break
+        if Choice5 == option_c:
+            print("'Most certainly. I shall inform the queen.' The guard disappears into the audience hall.")
+            print("The guard reappeared moments later. 'She'll see you now.'")
+            assassin_aware = True
+            pub_meeting()
+    if Choice4 == option_c:
+        print("You're just a diplomat. This is a massive thing, and if you were to act irrationally without")
+        print("consultation from your Princen then you could risk losing your head.")
+        print("You walk hastily to your rooms to pen a letter.")
+        print("You sit at your desk and begin to write.")
+        print(" ")
+        print("a: Tell Princen Kor that now is a good time to invade.")
+        print("b: Ask for advice from Princen Kor")
+        print("c: lie, and say that you know who is behind the coup but don't trust the messaging service.")
+        Choice7 = raw_input("What do you choose? ")
+        while True:
+            if Choice7 == option_a:
+                print("You write about the strategical advantages of invading Snaerjorth when it's been hit "
+                      "hardest. An")
+                print("invasion will have to begin as soon as possible and the faster Zuvlec raises it's troops the "
+                      "better.")
+                break
+            if Choice7 == option_b:
+                print("You write, requesting instructions from Princen Kor.")
+                break
+            if Choice7 == option_c:
+                print("Wanting to impress your superior you wax lyrical about how you have discovered the plot but "
+                      "fear it")
+                print("is unsafe to place all the information in one letter.")
+                break
+        print("You seal the letter and set it on your desk. You'll send it tomorrow.")
+
+# Banquet
+while True:
+    print("You're sitting at your desk, drawing, when Carmen enters through the servants door.")
+    print("She helps you get ready for the ball, Snaerjorth popular dress was far more likely to require an assistant")
+    print("putting it on, possibly due to the colder climate. 'Which outfit would you like to wear?' Carmen held up "
+          "three outfits.")
+    print("a: The black ballgown with little red flowers embroidered all over the skirt and bodice.")
+    print("b: The smart, stiff, black suit with a black shirt and white tie.")
+    print("c: The silk jumpsuit with tiny books embroidered over the ankle.")
+    Choice8 = raw_input("What do you choose? ")
+    if Choice8 == option_a:
+        print("You slide into the camisole, then the corset. Carmen helps you put on the various petticoats then tied")
+        print("the back of the dress. You're ready to go. You take tiny steps out of the room.")
+        speed = 0
+        break
+    if Choice8 == option_b:
+        print("With little assistance you step into the black suit. Carmen holds each item for you as you need it.")
+        print("You stand in front of the mirror, it's a little stiff but you'll manage. You exit the room.")
+        speed = 1
+        break
+    if Choice8 == option_c:
+        print("You slip into the jumpsuit with ease, silk sliding over your skin. Maybe a little cold for the weather")
+        print("but you'll manage. At least it's comfortable. You exit the room.")
+        speed = 2
+        break
+
+
+while True:
+    print("Dozens of finely dressed royals are already seated. A servant steps up to you and bows. 'If I may show you")
+    print("to your seat.' You follow the servant and sit down. A short woman wearing a white suit is seated on your")
+    print("left. The seat to your right remains to be filled. The short woman turns to you.")
+    print("Hello, I don't think I've seen you around before, are you the eldest Korm child perchance?")
+    print("You laugh and correct her. 'Oh no, I'm the ambassador from Zuvlec, " + name + ".")
+    if assassin_aware is True:
+        print("her eyes glittered.")
+    print("'Oh I see, and how are you finding it here, I'll bet it's a tad colder here than up there.'")
+    print("a: Ask her her name.")
+    print("b: Talk about the cultural differences between Zuvlec and Snaerjorth.")
+    print("c: End the conversation.")
+    Choice9 = raw_input("What do you choose? ")
+    while True:
+        if Choice9 == option_a:
+            print("'Oh I'm so sorry, I completely forgot to say, how rude of me. I'm Lady Bela.")
+            print("a: Talk about the cultural differences between Zuvlec and Snaerjorth.")
+            print("b: End the conversation.")
+            Choice10 = raw_input("What do you choose? ")
+            while True:
+                if Choice10 == option_a:
+                    print("The two of you talk about the cultural differences between your respective countries.")
+                    conversation_continue = True
+                    break
+                if Choice10 == option_b:
+                    conversation_solo()
+                    break
+            break
+        if Choice9 == option_b:
+            print("The two of you talk about the cultural differences between your respective countries.")
+        if Choice9 == option_c:
+            conversation_solo()
