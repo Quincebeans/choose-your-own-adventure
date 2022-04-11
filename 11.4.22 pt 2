@@ -1,27 +1,7 @@
 import sys
 
 
-assassin_aware = False
-appointment = False
-queen_visit = False
-queen_support = False
-
-# story set up
-while True:
-    name = raw_input("What is your name?")
-    if name:
-        print("hello" + name)
-        break
-    else:
-        print("Invalid name.")
-
-
-option_a = "a" or "A"
-option_b = "b" or "B"
-option_c = "c" or "C"
-option_d = "d" or "D"
-
-
+# A scene used during multiple paths of the story
 def pub_meeting():
     print("The Queen looks at you from her regal position on her throne. Surrounding her are a collection of advisers.")
     print(name + "Speak.")
@@ -67,6 +47,7 @@ def pub_meeting():
         sys.exit()
 
 
+# A scene used in multiple paths of the story
 def conversation_solo():
     print("You smile and she turns to the person on the other side of her. You sit contentedly for a moment until a")
     print("tall man sits down in the empty seat. He turns to you. 'Hello, I'm Viscount Seldon. I presume you are")
@@ -74,6 +55,7 @@ def conversation_solo():
     print("You smile and nod. The two of you continue talking until a hush falls on the table. The Queen is seated.")
 
 
+# A scene used in multiple paths of the story
 def conversation_continue():
     print("a tall man sits down in the empty seat on the other side of you. He turns to join in with your")
     print("conversation. He grins widely at Bela 'Oh hello Bela. Care to introduce us?'")
@@ -82,6 +64,39 @@ def conversation_continue():
     print("The three of you continue talking until a hush falls on the table. The Queen is seated.")
 
 
+# A scene used in multiple paths of the story
+def conversation():
+    print("You hear voices from inside the temple. 'How long should it take you?'")
+    print("'I can have the poisons ready within a week,' a second voice says.")
+    print("'I have an assassin ready with a knife if all else fails.'")
+    print("I assure you I can murder her without your assassin's assistance. Trust me, the Queen will be dead")
+    print("before tomorrow night.'")
+
+
+assassin_aware = False
+appointment = False
+queen_visit = False
+queen_support = False
+
+
+# story set up
+while True:
+    name = raw_input("What is your name?")
+    if name:
+        print("hello" + name)
+        break
+    else:
+        print("Invalid name.")
+
+
+# The possible options available for each decision the user makes
+option_a = "a" or "A"
+option_b = "b" or "B"
+option_c = "c" or "C"
+option_d = "d" or "D"
+
+
+# The beginning of the story
 print("You're walking through the gardens in the palace. As an ambassador from Zuvlec, you are afforded certain")
 print("privileges. Snaerjorth (anglicised spelling) has a variety of wildlife not seen at home.")
 print("A dog sprints up to you with a stick. That was one of the things you didn't expect when you travelled.")
@@ -89,6 +104,7 @@ print("Sure, you'd seen dogs before, but the ones in Snaerjorth were far differe
 print("expected when their main purpose was pulling sleighs, which are utterly redundant in Zuvlec.")
 
 
+# The first scene with choices, it's to get the user used to the decision making set up.
 while True:
     print("a: throw the stick for the dog")
     print("b: ignore the dog")
@@ -110,14 +126,7 @@ print("A small temple appears in the trees, green paint entwining perfectly with
 print("rooms, large enough for maybe 50 people tops. A small swing seat sits in the shade.")
 
 
-def conversation():
-    print("You hear voices from inside the temple. 'How long should it take you?'")
-    print("'I can have the poisons ready within a week,' a second voice says.")
-    print("'I have an assassin ready with a knife if all else fails.'")
-    print("I assure you I can murder her without your assassin's assistance. Trust me, the Queen will be dead")
-    print("before tomorrow night.'")
-
-
+# First real event of the story
 while True:
     print("a: sit in the swing seat")
     print("b: look at the temple decorations")
@@ -328,6 +337,7 @@ while True:
         break
 
 
+# ballroom and ending
 while True:
     print("Queen Alia sits down at the head of the table. She smiles round at the people surrounding her. She then")
     print("took a bite of her meal. The table broke into conversation and laughter, as if she'd broken a spell.")
